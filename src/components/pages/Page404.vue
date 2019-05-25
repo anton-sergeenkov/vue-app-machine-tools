@@ -7,4 +7,7 @@
 <style scoped lang="scss">
 @import '../../styles/_index.scss';
 
+.wrapper {
+    padding: $padding-basic;
+}
 </style>

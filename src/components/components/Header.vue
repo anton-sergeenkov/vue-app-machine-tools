@@ -38,6 +38,7 @@ export default {
     p:first-child {
         margin-bottom: 10px;
         font-weight: bold;
+        font-size: $fz-normal;
     }
 }
 p {

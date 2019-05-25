@@ -51,15 +51,4 @@ h2 {
 h3 {
     font-size: $fz-basic;
 }
-.btn {
-    padding: 10px 15px;
-    border-radius: 3px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-family: inherit;
-    font-size: inherit;
-    display: block;
-}
 </style>
