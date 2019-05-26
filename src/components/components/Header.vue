@@ -36,9 +36,12 @@ export default {
     width: 250px;
     p:first-child {
         margin-bottom: $m-smaller;
-        font-family: $ff-header;
+        font-family: $ff-accent;
         font-size: $fz-normal;
         text-transform: uppercase;
+    }
+    p:last-child {
+        font-family: $ff-unaccented;
     }
 }
 p {

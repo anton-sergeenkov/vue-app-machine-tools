@@ -5,7 +5,7 @@
         <app-carousel-text></app-carousel-text>
 
         <router-link :to="{name: 'quiz'}">
-            <v-btn flat>Собрать станок сейчас и получить подарок</v-btn>
+            <ui-button theme="primary">Собрать станок сейчас и получить подарок</ui-button>
         </router-link>
 
         <p class="text-comment">Тест бесплатный. Данные защищены</p>
@@ -34,6 +34,9 @@ export default {
     padding: $m-basic;
     background-image: url(../../assets/index/bg-section-1.jpg);
     @include img-cover-top;
+    a {
+        text-decoration: none; 
+    }
 }
 h1 {
     text-align: center;
@@ -58,17 +61,8 @@ h1 {
 }
 
 
-
-
-.v-btn {
-    background: #1867c0;
-    color: white;
-    display: block;
-    margin: auto;
-    text-transform: none;
-    text-decoration: none;
+.ui-btn {
+    margin: 10px auto;
 }
-a {
-   text-decoration: none; 
-}
+
 </style>
