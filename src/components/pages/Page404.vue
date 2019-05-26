@@ -8,6 +8,6 @@
 @import '../../styles/_index.scss';
 
 .wrapper {
-    padding: $padding-basic;
+    padding: $m-basic;
 }
 </style>

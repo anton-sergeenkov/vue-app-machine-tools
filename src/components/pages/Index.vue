@@ -1,14 +1,14 @@
 <template>
     <div class="wrapper">
         <h1>Оборудование плазменной резки с повышенной работоспособностью напрямую от производителя!</h1>
-        <p>Пройдите тест за 2 минуты и узнайте стоимость вашего станка плазменной резки</p>
+        <p class="text-test">Пройдите тест за 2 минуты и узнайте стоимость вашего станка плазменной резки</p>
         <app-carousel-text></app-carousel-text>
 
         <router-link :to="{name: 'quiz'}">
             <v-btn flat>Собрать станок сейчас и получить подарок</v-btn>
         </router-link>
 
-        <p>* Тест бесплатный. Данные защищены</p>
+        <p class="text-comment">Тест бесплатный. Данные защищены</p>
     </div>
 </template>
 
@@ -31,19 +31,35 @@ export default {
 @import '../../styles/_index.scss';
 
 .wrapper {
-    padding: $padding-basic;
-    background-image: url(../../assets/index/bg-section-1.png);
-    @include img-cover-center;
+    padding: $m-basic;
+    background-image: url(../../assets/index/bg-section-1.jpg);
+    @include img-cover-top;
 }
 h1 {
     text-align: center;
     font-weight: normal;
-    margin: 50px 0;
+    margin: $m-large;
+    text-transform: uppercase;
+    font-family: $ff-header;
+    text-shadow: $text-shadow;
 }
-p {
+.text-test {
     text-align: center;
     font-size: $fz-normal;
+    font-family: $ff-header;
+    text-transform: uppercase;
+    text-shadow: $text-shadow;
 }
+.text-comment {
+    margin-top: $m-small;
+    font-size: $fz-unaccented;
+    color: $c-unaccented;
+    text-align: center;
+}
+
+
+
+
 .v-btn {
     background: #1867c0;
     color: white;

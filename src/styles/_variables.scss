@@ -1,9 +1,22 @@
-$fz-basic: 16px;
-$fz-normal: 18px;
-$fz-h1: 23px;
-$fz-h2: 21px;
 
-$ff-basic: sans-serif;
+$c-unaccented: #565656;
+// red, white, black, dark-gray
 
-$margin-basic: 25px;
-$padding-basic: 30px;
+$fz-unaccented: 14px;
+$fz-basic:      16px;
+$fz-normal:     18px;
+$fz-medium:     20px;
+$fz-large:      22px;
+
+$ff-unaccented: 'Roboto-Light';
+$ff-basic:      'Roboto-Regular';
+$ff-accent:     'Roboto-Medium';
+$ff-header:     'PT-Sans-Bold';
+$ff-accent-num: 'Oswald-Bold';
+
+$m-smaller: 5px;
+$m-small:   10px;
+$m-basic:   30px;
+$m-large:   50px;
+
+$text-shadow: 0px 3px 6px rgba(255, 255, 255, 0.7);

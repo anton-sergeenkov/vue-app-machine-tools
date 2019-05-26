@@ -4,7 +4,7 @@
             <img src="../../assets/logo.png" class="logo">
         </router-link>
         <div class="name">
-            <p>ASTEK</p>
+            <p>Astek</p>
             <p>производитель промышленного оборудования</p>
         </div>
         <div class="phone">
@@ -26,19 +26,19 @@ export default {
 .wrapper {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
 }
 .logo {
     height: 50px;
-    margin: 0 $margin-basic;
+    margin: 0 $m-basic;
 }
 .name {
-    width: 200px;
-    text-align: center;
+    width: 250px;
     p:first-child {
-        margin-bottom: 10px;
-        font-weight: bold;
+        margin-bottom: $m-smaller;
+        font-family: $ff-header;
         font-size: $fz-normal;
+        text-transform: uppercase;
     }
 }
 p {
@@ -46,9 +46,9 @@ p {
 }
 .phone {
     margin-left: auto;
-    margin-right: $margin-basic;
-    font-weight: bold;
+    margin-right: $m-basic;
     font-size: $fz-normal;
+    font-family: $ff-header;
     a {
         color: #000;
         text-decoration: none;

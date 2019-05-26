@@ -29,6 +29,14 @@ export const routes = [
 
 <style lang="scss">
 @import './styles/_index.scss';
+
+$path: './assets/fonts/';
+@font-face { font-family: 'Roboto-Regular'; src: url($path+'roboto/Roboto-Regular.ttf'); }
+@font-face { font-family: 'Roboto-Medium';  src: url($path+'roboto/Roboto-Medium.ttf');  }
+@font-face { font-family: 'Roboto-Light';   src: url($path+'roboto/Roboto-Light.ttf');   }
+@font-face { font-family: 'PT-Sans-Bold';   src: url($path+'pt-sans/PT-Sans-Bold.ttf');  }
+@font-face { font-family: 'Oswald-Bold';    src: url($path+'oswald/Oswald-Bold.ttf');    }
+
 * {
     box-sizing: border-box;
 }
@@ -43,10 +51,10 @@ body {
     margin: auto;
 }
 h1 {
-    font-size: $fz-h1;
+    font-size: $fz-large;
 }
 h2 {
-    font-size: $fz-h2;
+    font-size: $fz-medium;
 }
 h3 {
     font-size: $fz-basic;

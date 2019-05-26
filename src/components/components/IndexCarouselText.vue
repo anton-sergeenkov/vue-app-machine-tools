@@ -1,10 +1,10 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper-carousel">
         <p>Ответив на вопросы, получите:</p>
-        <v-carousel light vertical interval="4000" height="50" hide-controls hide-delimiters>
+        <v-carousel light vertical interval="4000" height="20" hide-controls hide-delimiters>
             <v-carousel-item v-for="(item,i) in items" :key="i">
                 <v-responsive>
-                    <div class="carousel-text">{{item.title}}</div>
+                    <div class="text-carousel">&#187; {{item.title}}</div>
                 </v-responsive>
             </v-carousel-item>
         </v-carousel>
@@ -27,14 +27,25 @@ export default {
 
 <style scoped lang="scss">
 @import '../../styles/_index.scss';
+
+.wrapper-carousel {
+    width: 550px;
+    padding: 20px;
+    margin: 20px auto;
+    background-image: url(../../assets/index/main-subtitle.png);
+    @include img-contain-top;
+    font-size: $fz-normal;
+}
 p {
     text-align: center;
 }
-.carousel-text {
-	height: 50px;
+.text-carousel {
+	height: 20px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+    align-items: flex-end;
+    font-family: $ff-accent-num;
+    text-transform: uppercase;
 }
 .v-carousel {
     box-shadow: none;
