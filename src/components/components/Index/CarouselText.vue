@@ -26,13 +26,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../styles/_index.scss';
+@import '../../../styles/_index.scss';
 
 .wrapper-carousel {
     width: 550px;
     padding: 20px;
     margin: 20px auto;
-    background-image: url(../../assets/index/main-subtitle.png);
+    background-image: url(../../../assets/index/main-subtitle.png);
     @include img-contain-top;
     font-size: $fz-normal;
 }

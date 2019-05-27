@@ -1,19 +1,27 @@
 <template>
     <div class="wrapper">
-        <h1>Оборудование плазменной резки с повышенной работоспособностью напрямую от производителя!</h1>
-        <p class="text-test">Пройдите тест за 2 минуты и узнайте стоимость вашего станка плазменной резки</p>
+        
+        <div class="wrapper-header">
+            <h1>Оборудование плазменной резки с повышенной работоспособностью напрямую от производителя!</h1>
+            <p class="text">Пройдите тест за 2 минуты и узнайте стоимость вашего станка плазменной резки</p>
+        </div>
+
         <app-carousel-text></app-carousel-text>
+        <app-projects-border></app-projects-border>
 
-        <router-link :to="{name: 'quiz'}">
-            <ui-button theme="primary">Собрать станок сейчас и получить подарок</ui-button>
-        </router-link>
+        <div class="wrapper-button-quiz">
+            <router-link :to="{name: 'quiz'}">
+                <ui-button theme="primary">Собрать станок сейчас и получить подарок</ui-button>
+            </router-link>
+            <p class="comment">Тест бесплатный. Данные защищены</p>
+        </div>
 
-        <p class="text-comment">Тест бесплатный. Данные защищены</p>
     </div>
 </template>
 
 <script>
-import IndexCarouselText from '../components/IndexCarouselText.vue';
+import CarouselText from '../components/Index/CarouselText.vue';
+import ProjectsBorder from '../components/Index/ProjectsBorder.vue';
 
 export default {
     data () {
@@ -22,7 +30,8 @@ export default {
         }
     },
     components: {
-        'app-carousel-text': IndexCarouselText
+        'app-carousel-text': CarouselText,
+        'app-projects-border': ProjectsBorder
     }
 }
 </script>
@@ -38,31 +47,35 @@ export default {
         text-decoration: none; 
     }
 }
-h1 {
-    text-align: center;
-    font-weight: normal;
-    margin: $m-large;
-    text-transform: uppercase;
-    font-family: $ff-header;
-    text-shadow: $text-shadow;
-}
-.text-test {
-    text-align: center;
-    font-size: $fz-normal;
-    font-family: $ff-header;
-    text-transform: uppercase;
-    text-shadow: $text-shadow;
-}
-.text-comment {
-    margin-top: $m-small;
-    font-size: $fz-unaccented;
-    color: $c-unaccented;
-    text-align: center;
+
+.wrapper-header {
+    h1 {
+        text-align: center;
+        font-weight: normal;
+        margin: $m-large;
+        text-transform: uppercase;
+        font-family: $ff-header;
+        text-shadow: $text-shadow;
+    }
+    .text {
+        text-align: center;
+        font-size: $fz-normal;
+        font-family: $ff-header;
+        text-transform: uppercase;
+        text-shadow: $text-shadow;
+    }
 }
 
-
-.ui-btn {
-    margin: 10px auto;
+.wrapper-button-quiz {
+    .comment {
+        margin-top: $m-small;
+        font-size: $fz-unaccented;
+        color: $c-unaccented;
+        text-align: center;
+    }
+    .ui-btn {
+        margin: 10px auto;
+    }
 }
 
 </style>
