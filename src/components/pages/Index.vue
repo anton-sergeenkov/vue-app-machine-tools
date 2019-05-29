@@ -7,7 +7,11 @@
         </div>
 
         <app-carousel-text></app-carousel-text>
-        <app-projects-border></app-projects-border>
+
+        <div class="wrapper-projects">
+            <app-projects-svg header="1000+" text="Выполненных проектов" />
+            <app-projects-svg header="20 лет" text="Опыт производства станков" />
+        </div>
 
         <div class="wrapper-button-quiz">
             <router-link :to="{name: 'quiz'}">
@@ -21,7 +25,7 @@
 
 <script>
 import CarouselText from '../components/Index/CarouselText.vue';
-import ProjectsBorder from '../components/Index/ProjectsBorder.vue';
+import ProjectsSVG from '../components/Index/ProjectsSVG.vue';
 
 export default {
     data () {
@@ -31,7 +35,7 @@ export default {
     },
     components: {
         'app-carousel-text': CarouselText,
-        'app-projects-border': ProjectsBorder
+        'app-projects-svg': ProjectsSVG
     }
 }
 </script>
@@ -64,6 +68,12 @@ export default {
         text-transform: uppercase;
         text-shadow: $text-shadow;
     }
+}
+
+.wrapper-projects {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
 }
 
 .wrapper-button-quiz {
