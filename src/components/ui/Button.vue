@@ -25,7 +25,7 @@ export default {
 
 <style scoped lang="scss">
 $c-normal: #f5f5f5;
-$c-primary: #1867c0;
+$c-primary: #ff0a0a;
 
 .ui-btn {
     padding: 13px 20px;

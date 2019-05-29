@@ -1,14 +1,13 @@
 <template>
     <div class="wrapper">
         <router-link :to="{name: 'index'}">
-            <img src="../../assets/logo.png" class="logo">
+            <img src="../../assets/img/logo.png" class="logo">
         </router-link>
         <div class="name">
-            <p>Astek</p>
-            <p>производитель промышленного оборудования</p>
+            Производитель промышленного оборудования
         </div>
         <div class="phone">
-            <a href="tel:88002503860">8-800-250-38-60</a>
+            <a href="tel:84957906333">8(495)790-63-33 </a>
         </div>
     </div>
 </template>
@@ -34,15 +33,6 @@ export default {
 }
 .name {
     width: 250px;
-    p:first-child {
-        margin-bottom: $m-smaller;
-        font-family: $ff-accent;
-        font-size: $fz-normal;
-        text-transform: uppercase;
-    }
-    p:last-child {
-        font-family: $ff-unaccented;
-    }
 }
 p {
     margin: 0;
