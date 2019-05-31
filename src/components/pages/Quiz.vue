@@ -15,7 +15,8 @@
                 <ui-button v-if="currentNum === catalogQuiz.length-1" theme="primary" @click.native="finishQuiz">Получить результат</ui-button>
             </div>
         </div>
-        <div class="banner"></div>
+        <!-- <img src="../../assets/quiz/1.png" class="banner"> -->
+        <img :src="'../../assets/quiz/'+catalogQuiz[currentNum].img" class="banner">
     </div>
 </template>
 
@@ -82,6 +83,8 @@ export default {
     width: 300px;
     min-height: 400px;
     border: 1px solid;
+    display: block;
+    @include img-cover-center;
 }
 
 label {
