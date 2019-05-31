@@ -4,8 +4,8 @@
             <div class="header">{{catalogQuiz[currentNum].header}}</div>
             <div class="wrapper-data">
                 <div class="data">{{catalogQuiz[currentNum].data}}</div>
-                <ui-button v-if="currentNum !== catalogQuiz.length-1" theme="primary" @click.native="nextStep">Следующий шаг</ui-button>
-                <ui-button v-if="currentNum === catalogQuiz.length-1" theme="normal" @click.native="finishQuiz">Завершить</ui-button>
+                <ui-button v-if="currentNum !== catalogQuiz.length-1" theme="primary" @click.native="nextStep">На следующий шаг</ui-button>
+                <ui-button v-if="currentNum === catalogQuiz.length-1" theme="primary" @click.native="finishQuiz">Получить результат</ui-button>
             </div>
         </div>
         <div class="banner"></div>
@@ -14,6 +14,10 @@
 
 <script>
 import json from '../../assets/json/catalog.json';
+
+// radio
+// checkbox
+// text
 
 export default {
     data() {
