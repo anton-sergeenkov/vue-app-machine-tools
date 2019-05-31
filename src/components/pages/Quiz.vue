@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="quiz">
-            <div class="header">{{catalog[0].header}}</div>
-            <div class="data">{{catalog[0].data}}</div>
+            <div class="header">{{currentQuiz.header}}</div>
+            <div class="data">{{currentQuiz.data}}</div>
             <ui-button theme="primary" @click.native="nextStep">Следующий шаг</ui-button>
         </div>
         <div class="banner"></div>
@@ -15,7 +15,8 @@ import json from '../../assets/json/catalog.json';
 export default {
     data() {
         return {
-            catalog: null
+            catalog: null,
+            currentQuiz: null
         };
     },
     methods: {
@@ -25,6 +26,7 @@ export default {
     },
     created() {
         this.catalog = json;
+        this.currentQuiz = json[0];
     }
 }
 </script>
@@ -52,7 +54,8 @@ export default {
     }
 }
 .banner {
-    width: 400px;
+    flex-shrink: 0;
+    width: 200px;
     height: 400px;
     border: 1px solid;
 }
