@@ -3,6 +3,7 @@
         <div class="quiz">
             <div class="header">{{catalog[0].header}}</div>
             <div class="data">{{catalog[0].data}}</div>
+            <ui-button theme="primary" @click.native="nextStep">Следующий шаг</ui-button>
         </div>
         <div class="banner"></div>
     </div>
@@ -16,6 +17,11 @@ export default {
         return {
             catalog: null
         };
+    },
+    methods: {
+        nextStep() {
+            alert(1);
+        }
     },
     created() {
         this.catalog = json;
@@ -40,6 +46,9 @@ export default {
     }
     .data {
         padding: 20px;
+    }
+    .ui-btn {
+        margin: 10px auto;
     }
 }
 .banner {
