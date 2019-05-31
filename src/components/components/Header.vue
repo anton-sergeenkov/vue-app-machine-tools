@@ -7,7 +7,8 @@
             Производитель промышленного оборудования
         </div>
         <div class="phone">
-            <a href="tel:84957906333">8(495)790-63-33 </a>
+            <a href="tel:84957906333">8(495)790-63-33</a>
+            <p>Сейчас работаем</p>
         </div>
     </div>
 </template>
@@ -40,11 +41,16 @@ p {
 .phone {
     margin-left: auto;
     margin-right: $m-basic;
-    font-size: $fz-normal;
-    font-family: $ff-header;
     a {
         color: #000;
         text-decoration: none;
+        font-size: $fz-normal;
+        font-family: $ff-header;
+    }
+    p {
+        margin-top: 7px;
+        font-size: $fz-unaccented;
+        color: $c-accent;
     }
 }
 </style>
