@@ -1,9 +1,12 @@
 <template>
     <div class="wrapper">
         <div class="quiz">
-            <div class="header">{{currentQuiz.header}}</div>
-            <div class="data">{{currentQuiz.data}}</div>
-            <ui-button theme="primary" @click.native="nextStep">Следующий шаг</ui-button>
+            <div class="header">{{catalogQuiz[currentNum].header}}</div>
+            <div class="wrapper-data">
+                <div class="data">{{catalogQuiz[currentNum].data}}</div>
+                <ui-button v-if="currentNum !== catalogQuiz.length-1" theme="primary" @click.native="nextStep">Следующий шаг</ui-button>
+                <ui-button v-if="currentNum === catalogQuiz.length-1" theme="normal" @click.native="finishQuiz">Завершить</ui-button>
+            </div>
         </div>
         <div class="banner"></div>
     </div>
@@ -15,18 +18,20 @@ import json from '../../assets/json/catalog.json';
 export default {
     data() {
         return {
-            catalog: null,
-            currentQuiz: null
+            catalogQuiz: null,
+            currentNum: 0
         };
     },
     methods: {
         nextStep() {
-            alert(1);
+            this.currentNum++;
+        },
+        finishQuiz() {
+            alert('Завершили');
         }
     },
     created() {
-        this.catalog = json;
-        this.currentQuiz = json[0];
+        this.catalogQuiz = json;
     }
 }
 </script>
@@ -39,6 +44,8 @@ export default {
     display: flex;
 }
 .quiz {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     border: 1px solid;
     margin-right: 30px;
@@ -46,11 +53,17 @@ export default {
         padding: 20px;
         background: silver;
     }
-    .data {
-        padding: 20px;
-    }
-    .ui-btn {
-        margin: 10px auto;
+    .wrapper-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        .data {
+            padding: 20px;
+        }
+        .ui-btn {
+            margin: 10px auto;
+        }
     }
 }
 .banner {
