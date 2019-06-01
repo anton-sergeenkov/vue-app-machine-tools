@@ -15,17 +15,14 @@
                 <ui-button v-if="currentNum === catalogQuiz.length-1" theme="primary" @click.native="finishQuiz">Получить результат</ui-button>
             </div>
         </div>
-        <!-- <img src="../../assets/quiz/1.png" class="banner"> -->
-        <img :src="'../../assets/quiz/'+catalogQuiz[currentNum].img" class="banner">
+
+        <img :src="require('@/assets/quiz/'+catalogQuiz[currentNum].img)" class="banner">
+
     </div>
 </template>
 
 <script>
 import json from '../../assets/json/catalog.json';
-
-// radio
-// checkbox
-// text
 
 export default {
     data() {
@@ -39,7 +36,7 @@ export default {
             this.currentNum++;
         },
         finishQuiz() {
-            alert('Завершили');
+            alert('Спасибо!');
         }
     },
     created() {
@@ -52,15 +49,18 @@ export default {
 @import '../../styles/_index.scss';
 
 .wrapper {
-    padding: $m-basic;
+    padding: $m-large;
     display: flex;
+    background: $c-light;
+    justify-content: center;
 }
 .quiz {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    border: 1px solid;
     margin-right: 30px;
+    box-shadow: $box-shadow;
+    max-width: 800px;
     .header {
         padding: 20px;
         background: silver;
@@ -74,23 +74,24 @@ export default {
             padding: 20px;
         }
         .ui-btn {
-            margin: 10px auto;
+            margin: 20px auto;
         }
     }
 }
 .banner {
     flex-shrink: 0;
-    width: 300px;
+    width: 400px;
     min-height: 400px;
-    border: 1px solid;
+    max-height: 500px;
     display: block;
-    @include img-cover-center;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
-
 label {
     display: block;
     padding: 10px;
     cursor: pointer;
+    user-select: none;
 }
 input[type="text"] {
     padding: 5px;
