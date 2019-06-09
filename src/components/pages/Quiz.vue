@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import json from '../../assets/json/catalog.json';
 
 export default {
@@ -62,8 +63,16 @@ export default {
                 result += '\n\r';
             });
 
-            console.log(result);
-
+            this.sendResult(result);
+        },
+        sendResult(data) {
+            axios.post('./server/send-email.php', { quiz: data })
+            .then(function(response) {
+                console.log(response.data);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
         },
         pushResult() {
             this.storeResult.push({
