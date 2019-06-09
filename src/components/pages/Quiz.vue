@@ -4,8 +4,6 @@
             <div class="header">{{catalogQuiz[currentNum].header}}</div>
             <div class="wrapper-data">
 
-                <p>{{storeResult}}</p>
-                
                 <div class="data">
                     <div v-for="item in catalogQuiz[currentNum].data" :key="item.name">
                         <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="String(currentNum)"  />
@@ -49,18 +47,18 @@ export default {
 
             let result = '';
             this.storeResult.forEach(function(element, counter) {
-                result += 'Вопрос №'+(counter+1);
-
+                result += `Вопрос №${counter+1}: ${element.quiz} \n\r`;
+                
                 if (element.text.length !== 0) {
-                    result += ' Комментарий: '+element.text;
+                    result += 'Комментарий: '+element.text;
                 }
                 if (element.radio.length !== 0) {
-                    result += ' Выбранный вариант: '+element.radio;
+                    result += 'Выбранный вариант: '+element.radio;
                 }
                 if (element.checkbox.length !== 0) {
-                    result += ' Несколько выбранных вариантов: '+element.checkbox;
+                    result += 'Несколько выбранных вариантов: '+element.checkbox;
                 }
-                result += '\n\r';
+                result += '\n\r\n\r';
             });
 
             console.log(result);
@@ -68,6 +66,7 @@ export default {
         },
         pushResult() {
             this.storeResult.push({
+                quiz:     this.catalogQuiz[this.currentNum].header,
                 text:     this.stateText,
                 radio:    this.stateRadio,
                 checkbox: this.stateCheckbox
