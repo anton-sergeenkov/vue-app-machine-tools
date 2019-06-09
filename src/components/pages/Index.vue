@@ -45,7 +45,7 @@ export default {
 
 .wrapper {
     padding: $m-basic;
-    background-image: url(../../assets/index/bg-section-1.jpg);
+    background-image: url(../../assets/index/bg-section-1.png);
     @include img-cover-top;
     a {
         text-decoration: none; 

@@ -87,6 +87,7 @@ input[type="checkbox"] {
 }
 .icon {
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     width: $size;
