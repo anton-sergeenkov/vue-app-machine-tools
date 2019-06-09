@@ -29,8 +29,8 @@ export default {
 
 $box-shadow: 
     0px 2px 5px 5px rgba(33,37,41, 0.07), 
-    0px 6px 5px 0px rgba(33,37,41, 0.2), 
-    0 1px 5px 0px rgba(33,37,41, 0.1);
+    0px 6px 5px 0px rgba(33,37,41, 0.055), 
+    0 1px 5px 0px rgba(33,37,41, 0.07);
 
 .component-ui-button {
     display: block;
