@@ -28,9 +28,9 @@ export default {
 @import './styles.scss';
 
 $box-shadow: 
-    0px 3px 1px -2px rgba(0,0,0,0.2), 
-    0px 2px 2px 0px rgba(0,0,0,0.14), 
-    0px 1px 5px 0px rgba(0,0,0,0.12);
+    0px 2px 5px 5px rgba(33,37,41, 0.07), 
+    0px 6px 5px 0px rgba(33,37,41, 0.2), 
+    0 1px 5px 0px rgba(33,37,41, 0.1);
 
 .component-ui-button {
     display: block;
@@ -51,6 +51,9 @@ $box-shadow:
 @mixin setColor($bg-color, $color) {
     background-color: $bg-color; 
     color: $color;
+    &:hover {
+        background-color: transparentize($bg-color, 0.35);
+    }
 }
 
 .component-ui-button.v-custom-- {

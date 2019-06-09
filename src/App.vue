@@ -59,4 +59,16 @@ h2 {
 h3 {
     font-size: $fz-basic;
 }
+.text-header {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: $ff-header;
+    text-shadow: $text-shadow;  
+    font-size: $fz-large;
+}
+.text-comment {
+    font-size: $fz-unaccented;
+    color: $c-unaccented;
+}
 </style>
+
