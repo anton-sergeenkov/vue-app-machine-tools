@@ -15,7 +15,7 @@
 
         <div class="wrapper-button-quiz">
             <router-link :to="{name: 'quiz'}">
-                <ui-button theme="primary">Собрать станок сейчас и получить подарок</ui-button>
+                <ui-button color="red" label="Собрать станок сейчас и получить подарок" />
             </router-link>
             <p class="comment">Тест бесплатный. Данные защищены</p>
         </div>
@@ -83,7 +83,7 @@ export default {
         color: $c-unaccented;
         text-align: center;
     }
-    .ui-btn {
+    .component-ui-button {
         margin: 10px auto;
     }
 }

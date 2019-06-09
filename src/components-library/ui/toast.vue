@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style scoped>
+@import './styles.scss';
+
 .ui-toast {
     position: fixed;
     max-width: 80%;

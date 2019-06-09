@@ -18,7 +18,7 @@ import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
 // Components
-import './components/ui';
+import './components-library/ui';
 
 new Vue({
     el: '#app',

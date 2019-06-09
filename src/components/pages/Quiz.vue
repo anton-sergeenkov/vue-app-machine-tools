@@ -11,8 +11,8 @@
                     </label>
                 </div>
                 
-                <ui-button v-if="currentNum !== catalogQuiz.length-1" theme="primary" @click.native="nextStep">На следующий шаг</ui-button>
-                <ui-button v-if="currentNum === catalogQuiz.length-1" theme="primary" @click.native="finishQuiz">Получить результат</ui-button>
+                <ui-button v-if="currentNum !== catalogQuiz.length-1" color="red" @click.native="nextStep" label="На следующий шаг" />
+                <ui-button v-if="currentNum === catalogQuiz.length-1" color="red" @click.native="finishQuiz" label="Получить результат" />
             </div>
         </div>
 
@@ -73,8 +73,8 @@ export default {
         .data {
             padding: 20px;
         }
-        .ui-btn {
-            margin: 20px auto;
+        .component-ui-button {
+            margin: 20px auto; 
         }
     }
 }
