@@ -15,9 +15,9 @@ export default {
     computed: {
         classes() {
             return {
-                [this.size]: true, 
-                [this.color]: true,
-                ['block']: this.block
+                ['v-custom--'+this.size]: true, 
+                ['v-custom--'+this.color]: true,
+                ['v-custom--block']: this.block
             };
         }
     }
@@ -53,19 +53,20 @@ $box-shadow:
     color: $color;
 }
 
-.component-ui-button {
-    &.indigo     { @include setColor($indigo,     #fff); }
-    &.blue       { @include setColor($blue,       #fff); }
-    &.blue-light { @include setColor($blue-light, #fff); }
-    &.green      { @include setColor($green,      #fff); }
-    &.red        { @include setColor($red,        #fff); }
-    &.orange     { @include setColor($orange,     #fff); }
-    &.silver     { @include setColor($light,      #000); }
+.component-ui-button.v-custom-- {
+    &indigo     { @include setColor($indigo,     #fff); }
+    &blue       { @include setColor($blue,       #fff); }
+    &blue-light { @include setColor($blue-light, #fff); }
+    &green      { @include setColor($green,      #fff); }
+    &red        { @include setColor($red,        #fff); }
+    &orange     { @include setColor($orange,     #fff); }
+    &silver     { @include setColor($light,      #000); }
 
-    &.xs    { font-size: 10px; }
-    &.sm    { font-size: 14px; }
-    &.md    { font-size: 17px; }
-    &.lg    { font-size: 20px; }
-    &.block { width: 100%; }
+    &xs    { font-size: 10px; }
+    &sm    { font-size: 14px; }
+    &md    { font-size: 17px; }
+    &lg    { font-size: 20px; }
+
+    &block { width: 100%; }
 }
 </style>

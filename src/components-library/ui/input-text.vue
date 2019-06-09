@@ -41,7 +41,7 @@ export default {
         },
         classesColor() {
             return {
-                [this.color]: true
+                ['v-custom--'+this.color]: true
             };
         }
     }
@@ -62,14 +62,14 @@ $padding: 10px 10px 10px 5px;
         color: $color;
     }
 }
-.component-ui-input-text {
-    &.indigo     { @include setColor($indigo);     }
-    &.blue       { @include setColor($blue);       }
-    &.blue-light { @include setColor($blue-light); }
-    &.green      { @include setColor($green);      }
-    &.red        { @include setColor($red);        }
-    &.orange     { @include setColor($orange);     }
-    &.silver     { @include setColor($silver);     }
+.component-ui-input-text.v-custom-- {
+    &indigo     { @include setColor($indigo);     }
+    &blue       { @include setColor($blue);       }
+    &blue-light { @include setColor($blue-light); }
+    &green      { @include setColor($green);      }
+    &red        { @include setColor($red);        }
+    &orange     { @include setColor($orange);     }
+    &silver     { @include setColor($silver);     }
 }
 
 .component-ui-input-text {

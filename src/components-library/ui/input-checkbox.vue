@@ -27,7 +27,7 @@ export default {
     computed: {
         classes() {
             return {
-                [this.color]: true
+                ['v-custom--'+this.color]: true
             };
         },
         checked: {
@@ -73,16 +73,16 @@ input[type="checkbox"] {
         width: $size / 2;
         height: $size / 2;
         color: #fff;
-        font-size: 13px;
+        font-size: 11px;
     }
-    &:checked + .icon {
-        &.indigo     { @include setColor($indigo);     }
-        &.blue       { @include setColor($blue);       }
-        &.blue-light { @include setColor($blue-light); }
-        &.green      { @include setColor($green);      }
-        &.red        { @include setColor($red);        }
-        &.orange     { @include setColor($orange);     }
-        &.silver     { @include setColor($silver);     }
+    &:checked + .icon.v-custom-- {
+        &indigo     { @include setColor($indigo);     }
+        &blue       { @include setColor($blue);       }
+        &blue-light { @include setColor($blue-light); }
+        &green      { @include setColor($green);      }
+        &red        { @include setColor($red);        }
+        &orange     { @include setColor($orange);     }
+        &silver     { @include setColor($silver);     }
     }
 }
 .icon {

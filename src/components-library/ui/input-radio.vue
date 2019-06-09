@@ -22,7 +22,7 @@ export default {
     computed: {
         classes() {
             return {
-                [this.color]: true
+                ['v-custom--'+this.color]: true
             };
         }
     }
@@ -44,14 +44,14 @@ $size: 20px;
         }
     }
 }
-.component-ui-input-radio {
-    &.indigo     { @include setColor($indigo);     }
-    &.blue       { @include setColor($blue);       }
-    &.blue-light { @include setColor($blue-light); }
-    &.green      { @include setColor($green);      }
-    &.red        { @include setColor($red);        }
-    &.orange     { @include setColor($orange);     }
-    &.silver     { @include setColor($silver);     }
+.component-ui-input-radio.v-custom-- {
+    &indigo     { @include setColor($indigo);     }
+    &blue       { @include setColor($blue);       }
+    &blue-light { @include setColor($blue-light); }
+    &green      { @include setColor($green);      }
+    &red        { @include setColor($red);        }
+    &orange     { @include setColor($orange);     }
+    &silver     { @include setColor($silver);     }
 }
 
 .component-ui-input-radio {
