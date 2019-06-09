@@ -49,16 +49,17 @@ export default {
             this.storeResult.forEach(function(element, counter) {
                 result += `Вопрос №${counter+1}: ${element.quiz} \n\r`;
                 
-                if (element.text.length !== 0) {
-                    result += 'Комментарий: '+element.text;
-                }
                 if (element.radio.length !== 0) {
-                    result += 'Выбранный вариант: '+element.radio;
+                    result += 'Выбранный вариант: '+element.radio+'\n\r';
                 }
                 if (element.checkbox.length !== 0) {
-                    result += 'Несколько выбранных вариантов: '+element.checkbox;
+                    result += 'Несколько выбранных вариантов: '+element.checkbox+'\n\r';
                 }
-                result += '\n\r\n\r';
+                if (element.text.length !== 0) {
+                    result += 'Комментарий: '+element.text+'\n\r';
+                }
+
+                result += '\n\r';
             });
 
             console.log(result);
