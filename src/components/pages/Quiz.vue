@@ -5,18 +5,10 @@
             <div class="wrapper-data">
                 
                 <div class="data">
-                    <!-- <label v-for="item in catalogQuiz[currentNum].data" :key="item.name">
-                        <input :type="item.type" name="quiz">
-                        {{item.name}}
-                    </label> -->
 
-                    <!-- item.type = radio | text | checkbox
-                    item.name -->
-
-
-                    <div v-for="(item, i) in catalogQuiz[currentNum].data" :key="item.name">
+                    <div v-for="item in catalogQuiz[currentNum].data" :key="item.name">
                         
-                        <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="'el'+i"  />
+                        <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="String(currentNum)"  />
                         <ui-input-checkbox v-if="item.type=='checkbox'" v-model="stateCheckbox" :label="item.name" color="red" :val="item.name" />
                         <ui-input-text     v-if="item.type=='text'"     v-model="stateText"     :label="item.name" color="red" />
 
@@ -80,7 +72,7 @@ export default {
     max-width: 800px;
     .header {
         padding: 20px;
-        background: silver;
+        background: rgb(228, 228, 228);
     }
     .wrapper-data {
         display: flex;
@@ -116,5 +108,10 @@ input[type="text"] {
 }
 input {
     margin-right: 5px;
+}
+
+.component-ui-input-text {
+    margin: 10px 15px;
+    padding-right: 25px;
 }
 </style>
