@@ -10,12 +10,13 @@
                 <li><b>Подарок: </b>{{storeGift.name}}</li>
                 <li><b>Секретный бонус:</b> Мангал дизайнерской работы</li>
             </ul>
-            <ui-input-text label="Как к вам обращаться?*" color="red" />
-            <ui-input-text label="Телефон для консультации*" color="red" />
-            <ui-input-text label="Электронный ящик для ТКП*" color="red" />
+
+            <ui-input-text v-model="inputContact.name" label="Как к вам обращаться?*" color="red" />
+            <ui-input-text v-model="inputContact.phone" label="Телефон для консультации*" color="red" />
+            <ui-input-text v-model="inputContact.email" label="Электронный ящик для ТКП*" color="red" />
 
             <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked v-model="inputContact.agreement">
                 <span>
                     Отправляя сведения через электронную форму, вы даете согласие на обработку, 
                     сбор, хранение и передачу третьим лицам предоставленной Вами информации на условиях
@@ -36,8 +37,6 @@
                 <div>Бонус - секретный подарок</div>
             </div>
         </div>
-
-
     </div>
 </template>
 
@@ -46,13 +45,30 @@ export default {
     data() {
         return {
             storeGift: null,
-            storeQuiz: ''
+            storeQuiz: '',
+            inputContact: { name: '', phone: '', email: '', agreement: true }
         };
     },
     methods: {
         checkQuiz() {
-            // result += '------------------------------------\n\r\n\r';
-            // result += 'Подарок: '+this.storeGift.name;
+            if ( 
+                (this.inputContact.name.length !== 0) &&
+                (this.inputContact.phone.length !== 0) &&
+                (this.inputContact.email.length !== 0) &&
+                (this.inputContact.agreement !== false)
+            ) {
+                let splitter = '\n\r------------------------------------\n\r';
+                let result =  
+                    this.storeQuiz + splitter + 
+                    'Подарок: ' + this.storeGift.name + splitter + 
+                    'Имя: '     + this.inputContact.name + '\n\r' +  
+                    'Телефон: ' + this.inputContact.phone + '\n\r' +  
+                    'E-mail: '  + this.inputContact.email;
+                console.log(result);
+            } else {
+                alert('Заполните все поля!');
+            }
+
         },
         sendQuiz(data) {
             axios.post('./server/send-email.php', { quiz: data })
