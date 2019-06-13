@@ -1,7 +1,5 @@
 <template>
-    <button :class="classes" class="component-ui-button">
-        {{label}}
-    </button>
+    <button :class="classes" class="component-ui-button" v-html="label"></button>
 </template>
 
 <script>

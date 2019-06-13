@@ -1,5 +1,10 @@
 <template>
     <div>
+
+        <!-- <app-index-header />
+        <app-index-gift /> -->
+
+
         <div class="section-header">
             <div class="header wrapper">
                 <h1 class="text-header">Оборудование плазменной резки с повышенной работоспособностью напрямую от производителя!</h1>
@@ -27,14 +32,27 @@
             <div class="comment text-comment">Нажмите "Выбрать" на понравившийся лот</div>
 
             <div class="gifts">
-                <div v-for="item in gifts" :key="item.name" class="gift">
+                <div v-for="item in gifts" :key="item.name" class="gift" @click="getGift(item.name)">
                     <div v-html="item.name" class="gift-header"></div>
                     <div v-html="item.description" class="gift-description"></div>
                     <img :src="require('@/assets/gift/'+item.img)">
-                    <ui-button label="Выбрать" block />
+
+                    <slot v-if="checkGift(item.name)">
+                        <ui-button label="Выбрано" block color="red" />
+                    </slot>
+                    <slot v-else>
+                        <ui-button label="Выбрать" block />
+                    </slot>
                 </div>
             </div>
+            
+            <div v-if="giftCheck.length !== 0">
+                <div class="">Вы выбрали подарок:</div>
+                <div v-html="giftCheck"></div>
 
+                <ui-button label="Получить подарок <br> ответив на 7 вопросов" color="red" />
+            </div>
+ 
         </div>
 
 
@@ -53,7 +71,20 @@ export default {
                 {name: 'Комплект расходников на 1 месяц', img: '2.png', description: ''},
                 {name: 'Доставка бесплатно',              img: '3.png', description: ''},
                 {name: 'Отдых на берегу моря',            img: '4.png', description: ''}
-            ]
+            ],
+            giftCheck: ''
+        }
+    },
+    methods: {
+        getGift(element) {
+            this.giftCheck = element;
+        },
+        checkGift(element) {
+            if (element == this.giftCheck) {
+                return true;
+            } else {
+                return false;
+            }
         }
     },
     components: {
@@ -125,7 +156,7 @@ export default {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 300px;
+            width: 290px;
             padding: 20px;
             margin: 20px 10px;
             box-shadow: $box-shadow-color;
@@ -159,6 +190,14 @@ export default {
             }
         }
 
+    }
+
+
+    .zz {
+        .component-ui-button {
+            line-height: 1.7;
+            margin: 10px auto;
+        }
     }
 }
 </style>
