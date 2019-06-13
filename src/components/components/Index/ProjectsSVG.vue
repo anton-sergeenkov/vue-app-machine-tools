@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../styles/_index.scss';
+@import '@/styles/_index.scss';
 
 .project {
     width: 100px;
@@ -52,11 +52,7 @@ export default {
         left: 7px;
         padding: 0px 10px;
     }
-    .text {
-        // font-size: $fz-unaccented;
-    }
 }
-
 .svg-project {
     width: 100%;
     height: 100%;

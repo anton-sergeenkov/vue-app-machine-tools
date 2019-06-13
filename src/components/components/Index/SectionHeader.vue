@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../styles/_index.scss';
+@import '@/styles/_index.scss';
 
 .section-header {
     padding: $m-basic;

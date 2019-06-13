@@ -33,7 +33,7 @@
 
 <script>
 import axios from 'axios';
-import json from '../../assets/json/catalog.json';
+import json from '@/assets/json/catalog.json';
 
 export default {
     data() {
@@ -115,7 +115,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../styles/_index.scss';
+@import '@/styles/_index.scss';
 
 .wrapper {
     padding: $m-large;

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <router-link :to="{name: 'index'}">
-            <img src="../../assets/img/logo.png" class="logo">
+            <img src="@/assets/img/logo.png" class="logo">
         </router-link>
         <div class="name">
             Производитель промышленного оборудования
@@ -13,15 +13,8 @@
     </div>
 </template>
 
-<script>
-
-export default {
-    //
-}
-</script>
-
 <style scoped lang="scss">
-@import '../../styles/_index.scss';
+@import '@/styles/_index.scss';
 
 .wrapper {
     display: flex;

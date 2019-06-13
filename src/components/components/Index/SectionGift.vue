@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../styles/_index.scss';
+@import '@/styles/_index.scss';
 
 .section-gift {
     padding: $m-basic;
@@ -123,7 +123,7 @@ export default {
         margin-top: $m-basic;
     }
 }
-.gift-check{
+.gift-check {
     text-align: center;
     a {
         text-decoration: none;

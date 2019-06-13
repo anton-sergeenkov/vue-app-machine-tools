@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../styles/_index.scss';
+@import '@/styles/_index.scss';
 
 .wrapper-carousel {
     width: 550px;

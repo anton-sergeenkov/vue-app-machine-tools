@@ -5,9 +5,8 @@
 </template>
 
 <style scoped lang="scss">
-@import '../../styles/_index.scss';
-
+@import '@/styles/_index.scss';
 .wrapper {
-    padding: $m-basic;
+    padding: $m-biggest;
 }
 </style>
