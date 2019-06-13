@@ -40,30 +40,38 @@ export default {
     },
     methods: {
         nextStep() {
-            this.pushResult();
-            this.currentNum++;
+            if (this.checkResult()) {
+                this.pushResult();
+                this.currentNum++;
+            } else {
+                alert('Выберите вариант или заполните поле');
+            }
         },
         getResult() {
-            this.pushResult();
+            if (this.checkResult()) {
+                this.pushResult();
 
-            let result = '';
-            this.storeResult.forEach(function(element, counter) {
-                result += `Вопрос №${counter+1}: ${element.quiz} \n\r`;
-                
-                if (element.radio.length !== 0) {
-                    result += 'Выбранный вариант: '+element.radio+'\n\r';
-                }
-                if (element.checkbox.length !== 0) {
-                    result += 'Несколько выбранных вариантов: '+element.checkbox+'\n\r';
-                }
-                if (element.text.length !== 0) {
-                    result += 'Комментарий: '+element.text+'\n\r';
-                }
+                let result = '';
+                this.storeResult.forEach(function(element, counter) {
+                    result += `Вопрос №${counter+1}: ${element.quiz} \n\r`;
+                    
+                    if (element.radio.length !== 0) {
+                        result += 'Выбранный вариант: '+element.radio+'\n\r';
+                    }
+                    if (element.checkbox.length !== 0) {
+                        result += 'Несколько выбранных вариантов: '+element.checkbox+'\n\r';
+                    }
+                    if (element.text.length !== 0) {
+                        result += 'Комментарий: '+element.text+'\n\r';
+                    }
 
-                result += '\n\r';
-            });
+                    result += '\n\r';
+                });
 
-            this.sendResult(result);
+                this.sendResult(result);
+            } else {
+                alert('Выберите вариант или заполните поле');
+            }
         },
         sendResult(data) {
             axios.post('./server/send-email.php', { quiz: data })
@@ -84,6 +92,17 @@ export default {
             this.stateText = '';
             this.stateRadio = '';
             this.stateCheckbox = [];
+        },
+        checkResult() {
+            if ( 
+                (this.stateText.length != 0) || 
+                (this.stateRadio.length != 0) || 
+                (this.stateCheckbox.length != 0) 
+            ) {
+                return true;
+            } else {
+                return false;
+            }
         }
     },
     created() {
