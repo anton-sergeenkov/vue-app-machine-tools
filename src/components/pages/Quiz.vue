@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import json from '@/assets/json/catalog.json';
 
 export default {
@@ -62,6 +61,7 @@ export default {
                 this.pushResult();
 
                 let result = '';
+                
                 this.storeResult.forEach(function(element, counter) {
                     result += `Вопрос №${counter+1}: ${element.quiz} \n\r`;
                     
@@ -74,8 +74,6 @@ export default {
                     if (element.text.length !== 0) {
                         result += 'Комментарий: '+element.text+'\n\r';
                     }
-
-                    result += '\n\r';
                 });
 
                 this.$store.commit('SET_QUIZ', {quiz:result});

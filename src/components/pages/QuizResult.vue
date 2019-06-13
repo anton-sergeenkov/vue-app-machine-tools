@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -57,24 +59,22 @@ export default {
                 (this.inputContact.email.length !== 0) &&
                 (this.inputContact.agreement !== false)
             ) {
-                let splitter = '\n\r------------------------------------\n\r';
+                let splitter = '------------------------------------\n\r';
                 let result =  
                     this.storeQuiz + splitter + 
-                    'Подарок: ' + this.storeGift.name + splitter + 
+                    'Подарок: ' + this.storeGift.name + '\n\r'+splitter + 
                     'Имя: '     + this.inputContact.name + '\n\r' +  
                     'Телефон: ' + this.inputContact.phone + '\n\r' +  
                     'E-mail: '  + this.inputContact.email;
-                console.log(result);
+                this.sendQuiz(result);
             } else {
                 alert('Заполните все поля!');
             }
-
         },
         sendQuiz(data) {
             axios.post('./server/send-email.php', { quiz: data })
             .then(function(response) {
-                console.log(response.data);
-                alert('Спасибо за заявку');
+                alert('Спасибо за заявку!');
             })
             .catch(function(error) {
                 console.log(error);
