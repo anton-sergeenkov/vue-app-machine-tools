@@ -17,8 +17,17 @@
             </div>
         </div>
 
-        <img :src="require('@/assets/quiz/'+catalogQuiz[currentNum].img)" class="banner">
-
+        <div class="banner">
+            <img :src="require('@/assets/quiz/'+catalogQuiz[currentNum].img)" class="main">
+            <div class="gift" v-if="giftCheck.img.length !== 0">
+                <img :src="require('@/assets/gift/'+giftCheck.img)" class="gift">
+                <div>Гарантированный подарок</div>
+                <img src="@/assets/gift/icon1.png" class="icon">
+                <img src="@/assets/gift/icon2.png" class="icon">
+                <div>Бонус - секретный подарок</div>
+            </div>
+        </div>
+        
     </div>
 </template>
 
@@ -31,6 +40,7 @@ export default {
         return {
             catalogQuiz: null,
             currentNum: 0,
+            giftCheck: null,
 
             stateText: '',
             stateRadio: '',
@@ -107,6 +117,7 @@ export default {
     },
     created() {
         this.catalogQuiz = json;
+        this.giftCheck = this.$store.getters.GET_GIFT;
     }
 }
 </script>
@@ -147,11 +158,44 @@ export default {
 .banner {
     flex-shrink: 0;
     width: 400px;
-    min-height: 400px;
-    max-height: 500px;
-    display: block;
-    object-fit: cover;
-    object-position: 50% 50%;
+    
+    img.main {
+        display: block;
+        width: 100%;
+        min-height: 400px;
+        max-height: 500px;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    .gift {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        margin-top: $m-small;
+        padding-right: $m-small;
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        font-size: $fz-small;
+        color: $c-accent;
+        img.gift, img.icon {
+            flex-shrink: 0;
+            display: block;
+            padding: 0;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+        img.gift {
+            margin: 0;
+            width: 95px;
+            height: 100%;
+            margin-right: $m-small;
+        }
+        img.icon {
+            margin: 0 $m-small;
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
 label {
     display: block;
