@@ -4,7 +4,7 @@
         <div class="comment text-comment">Нажмите "Выбрать" на понравившийся лот</div>
 
         <div class="gifts">
-            <div v-for="item in gifts" :key="item.name" class="gift" @click="getGift(item.name)">
+            <div v-for="item in gifts" :key="item.name" class="gift" @click="getGift(item.name, item.img)">
                 <div v-html="item.name" class="gift-header"></div>
                 <div v-html="item.description" class="gift-description"></div>
                 <img :src="require('@/assets/gift/'+item.img)">
@@ -33,7 +33,6 @@
             <hr>
             <div class="footer text-comment"><b>Промышленное предприятие "ASTEK"</b> <br> - производим высокоточное промышленное оборудование</div>
         </div>
-
     </div>
 </template>
 
@@ -51,8 +50,9 @@ export default {
         }
     },
     methods: {
-        getGift(element) {
-            this.giftCheck = element;
+        getGift(name, img) {
+            this.giftCheck = name;
+		    this.$store.commit('SET_GIFT', {giftName:name, giftImage:img});
         },
         checkGift(element) {
             if (element == this.giftCheck) {

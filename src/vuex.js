@@ -1,20 +1,24 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        products: []
+        gift: {
+            name: '',
+            img: ''
+        }
     },
     getters: {
-        getProducts(state) {
-            return state.products;
+        GET_GIFT(state) {
+            return state.gift;
         }
     }, 
     mutations: {
-        SET_PRODUCTS(state, payload) {
-            state.products = payload.products;
+        SET_GIFT(state, payload) {
+            state.gift.name = payload.giftName;
+            state.gift.img = payload.giftImage;
         }
     }
 })
