@@ -7,7 +7,7 @@
             type="checkbox" 
         />
         <div :class="classes" class="icon"></div>
-        {{label}}    
+        <span v-html="label"></span>
     </label>
 </template>
 

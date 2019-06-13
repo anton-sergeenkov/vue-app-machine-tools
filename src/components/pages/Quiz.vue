@@ -19,8 +19,8 @@
 
         <div class="banner">
             <img :src="require('@/assets/quiz/'+catalogQuiz[currentNum].img)" class="main">
-            <div class="gift" v-if="giftCheck.img.length !== 0">
-                <img :src="require('@/assets/gift/'+giftCheck.img)" class="gift">
+            <div class="gift" v-if="storeGift.img.length !== 0">
+                <img :src="require('@/assets/gift/'+storeGift.img)" class="gift">
                 <div>Гарантированный подарок</div>
                 <img src="@/assets/gift/icon1.png" class="icon">
                 <img src="@/assets/gift/icon2.png" class="icon">
@@ -40,7 +40,7 @@ export default {
         return {
             catalogQuiz: null,
             currentNum: 0,
-            giftCheck: null,
+            storeGift: null,
 
             stateText: '',
             stateRadio: '',
@@ -78,19 +78,11 @@ export default {
                     result += '\n\r';
                 });
 
-                this.sendResult(result);
+                this.$store.commit('SET_QUIZ', {quiz:result});
+                this.$router.push({ name: 'quiz-result' })
             } else {
                 alert('Выберите вариант или заполните поле');
             }
-        },
-        sendResult(data) {
-            axios.post('./server/send-email.php', { quiz: data })
-            .then(function(response) {
-                console.log(response.data);
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
         },
         pushResult() {
             this.storeResult.push({
@@ -117,7 +109,7 @@ export default {
     },
     created() {
         this.catalogQuiz = json;
-        this.giftCheck = this.$store.getters.GET_GIFT;
+        this.storeGift = this.$store.getters.GET_GIFT;
     }
 }
 </script>
