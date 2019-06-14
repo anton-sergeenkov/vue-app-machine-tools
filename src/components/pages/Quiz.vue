@@ -116,18 +116,18 @@ export default {
 @import '@/styles/_index.scss';
 
 .wrapper {
-    padding: $m-large;
     display: flex;
-    background: $c-light;
     justify-content: center;
+    padding: $m-large;
+    background: $c-light;
 }
 .quiz {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-right: 30px;
-    box-shadow: $box-shadow;
     max-width: 800px;
+    margin-right: $m-basic;
+    box-shadow: $box-shadow;
     background: #fff;
     .header {
         padding: 20px;
@@ -149,7 +149,6 @@ export default {
 .banner {
     flex-shrink: 0;
     width: 400px;
-    
     img.main {
         display: block;
         width: 100%;
@@ -157,6 +156,7 @@ export default {
         max-height: 500px;
         object-fit: cover;
         object-position: 50% 50%;
+        box-shadow: $box-shadow;
     }
     .gift {
         display: flex;
@@ -171,39 +171,40 @@ export default {
         img.gift, img.icon {
             flex-shrink: 0;
             display: block;
-            padding: 0;
+            padding: 0;      
             object-fit: cover;
             object-position: 50% 50%;
         }
         img.gift {
-            margin: 0;
             width: 95px;
             height: 100%;
+            margin: 0;
             margin-right: $m-small;
         }
         img.icon {
-            margin: 0 $m-small;
             width: 30px;
             height: 30px;
+            margin: 0 $m-small;
         }
     }
 }
 label {
     display: block;
-    padding: 10px;
+    padding: 7px;
     cursor: pointer;
     user-select: none;
 }
-input[type="text"] {
-    padding: 5px;
-    border: 1px solid #000;
-}
-input {
-    margin-right: 5px;
-}
-
 .component-ui-input-text {
     margin: 10px 15px;
     padding-right: 25px;
+}
+
+@media screen and (max-width: 935px) {
+    .banner {
+        display: none;
+    }
+    .quiz {
+        margin: 0;
+    }
 }
 </style>
