@@ -105,9 +105,9 @@ export default {
     margin-right: $m-large;
     .header {
         margin-bottom: $m-basic;
+        line-height: 1.6;
         font-family: $ff-accent;
         font-size: $fz-medium;
-        line-height: 1.6;
     }
     li {
         margin: $m-small 0px;
@@ -127,14 +127,13 @@ export default {
 }
 
 .wrapper-img {
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    flex-shrink: 0;
     width: 400px;
     background: #fff;
     box-shadow: $box-shadow;
-    
     img.main {
         display: block;
         width: 100%;
@@ -150,7 +149,6 @@ export default {
         margin-top: $m-small;
         padding-right: $m-small;
         background-color: #fff;
-        
         font-size: $fz-small;
         color: $c-accent;
         img.gift, img.icon {
@@ -171,6 +169,22 @@ export default {
             width: 30px;
             height: 30px;
         }
+    }
+}
+
+@media screen and (max-width: 935px) {
+    .wrapper-img {
+        display: none;
+    }
+}
+@media screen and (max-width: 400px) {
+    .wrapper {
+        padding: $m-large $m-basic;
+    }
+}
+@media screen and (max-width: 345px) {
+    .wrapper {
+        padding: $m-large $m-small;
     }
 }
 </style>
