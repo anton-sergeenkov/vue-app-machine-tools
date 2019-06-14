@@ -1,33 +1,41 @@
 <template>
     <div class="wrapper">
-        <div class="quiz">
-            <div class="header">{{catalogQuiz[currentNum].header}}</div>
-            <div class="wrapper-data">
-
-                <div class="data">
-                    <div v-for="item in catalogQuiz[currentNum].data" :key="item.name">
-                        <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="String(currentNum)"  />
-                        <ui-input-checkbox v-if="item.type=='checkbox'" v-model="stateCheckbox" :label="item.name" color="red" :val="item.name" />
-                        <ui-input-text     v-if="item.type=='text'"     v-model="stateText"     :label="item.name" color="red" />
-                    </div>
-                </div>
-                
-                <ui-button v-if="currentNum !== catalogQuiz.length-1" color="red" @click.native="nextStep" label="На следующий шаг" />
-                <ui-button v-if="currentNum === catalogQuiz.length-1" color="red" @click.native="getResult" label="Получить результат" />
-            </div>
-        </div>
-
-        <div class="banner">
-            <img :src="require('@/assets/quiz/'+catalogQuiz[currentNum].img)" class="main">
-            <div class="gift" v-if="storeGift.img.length !== 0">
-                <img :src="require('@/assets/gift/'+storeGift.img)" class="gift">
-                <div>Гарантированный подарок</div>
-                <img src="@/assets/gift/icon1.png" class="icon">
-                <img src="@/assets/gift/icon2.png" class="icon">
-                <div>Бонус - секретный подарок</div>
-            </div>
-        </div>
         
+        <div class="wrapper-step">
+            Шаг {{currentNum+1}}
+        </div>
+
+        <div class="wrapper-content">
+
+            <div class="wrapper-quiz">
+                <div class="header">{{catalogQuiz[currentNum].header}}</div>
+                <div class="wrapper-data">
+
+                    <div class="data">
+                        <div v-for="item in catalogQuiz[currentNum].data" :key="item.name">
+                            <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="String(currentNum)"  />
+                            <ui-input-checkbox v-if="item.type=='checkbox'" v-model="stateCheckbox" :label="item.name" color="red" :val="item.name" />
+                            <ui-input-text     v-if="item.type=='text'"     v-model="stateText"     :label="item.name" color="red" />
+                        </div>
+                    </div>
+                    
+                    <ui-button v-if="currentNum !== catalogQuiz.length-1" color="red" @click.native="nextStep" label="На следующий шаг" />
+                    <ui-button v-if="currentNum === catalogQuiz.length-1" color="red" @click.native="getResult" label="Получить результат" />
+                </div>
+            </div>
+
+            <div class="wrapper-banner">
+                <img :src="require('@/assets/quiz/'+catalogQuiz[currentNum].img)" class="main">
+                <div class="gift" v-if="storeGift.img.length !== 0">
+                    <img :src="require('@/assets/gift/'+storeGift.img)" class="gift">
+                    <div>Гарантированный подарок</div>
+                    <img src="@/assets/gift/icon1.png" class="icon">
+                    <img src="@/assets/gift/icon2.png" class="icon">
+                    <div>Бонус - секретный подарок</div>
+                </div>
+            </div>
+        
+        </div>
     </div>
 </template>
 
@@ -116,12 +124,18 @@ export default {
 @import '@/styles/_index.scss';
 
 .wrapper {
-    display: flex;
-    justify-content: center;
     padding: $m-large;
     background: $c-light;
 }
-.quiz {
+.wrapper-content {
+    display: flex;
+    justify-content: center;
+}
+.wrapper-step {
+    font-weight: bold;
+    padding: 20px;
+}
+.wrapper-quiz {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -146,7 +160,7 @@ export default {
         }
     }
 }
-.banner {
+.wrapper-banner {
     flex-shrink: 0;
     width: 400px;
     img.main {
@@ -200,10 +214,10 @@ label {
 }
 
 @media screen and (max-width: 935px) {
-    .banner {
+    .wrapper-banner {
         display: none;
     }
-    .quiz {
+    .wrapper-quiz {
         margin: 0;
     }
 }
