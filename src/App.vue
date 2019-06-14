@@ -2,6 +2,7 @@
     <div id="app">
         <app-header></app-header>
         <router-view></router-view>
+        <app-metrics />
     </div>
 </template>
 
@@ -11,11 +12,13 @@ import Quiz       from './components/pages/Quiz.vue';
 import QuizResult from './components/pages/QuizResult.vue';
 
 import Header     from './components/components/Header.vue';
+import ApiMetrics from './components/components/ApiMetrics.vue';
 import Page404    from './components/pages/Page404.vue';
 
 export default {
     components: {
-        'app-header': Header
+        'app-header': Header,
+        'app-metrics': ApiMetrics
     }
 }
 
