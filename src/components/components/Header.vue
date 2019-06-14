@@ -28,9 +28,6 @@
 .name {
     width: 250px;
 }
-p {
-    margin: 0;
-}
 .phone {
     margin-left: auto;
     margin-right: $m-basic;
@@ -41,6 +38,7 @@ p {
         font-family: $ff-header;
     }
     p {
+        margin: 0;
         margin-top: 7px;
         font-size: $fz-unaccented;
         color: $c-accent;

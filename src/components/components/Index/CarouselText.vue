@@ -4,7 +4,7 @@
         <v-carousel light vertical interval="4000" height="20" hide-controls hide-delimiters>
             <v-carousel-item v-for="(item,i) in items" :key="i">
                 <v-responsive>
-                    <div class="text-carousel">&#187; {{item.title}}</div>
+                    <div class="title-carousel">&#187; {{item.title}}</div>
                 </v-responsive>
             </v-carousel-item>
         </v-carousel>
@@ -29,25 +29,36 @@ export default {
 @import '@/styles/_index.scss';
 
 .wrapper-carousel {
-    width: 550px;
-    padding: 20px;
-    margin: 20px auto;
-    background-image: url(../../../assets/index/main-subtitle.png);
     @include img-contain-top;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    background-image: url(../../../assets/index/main-subtitle.png);
     font-size: $fz-normal;
+    p {
+        text-align: center;
+    }
 }
-p {
-    text-align: center;
-}
-.text-carousel {
-	height: 20px;
+.title-carousel {
 	display: flex;
 	justify-content: center;
     align-items: flex-end;
+	height: 20px;
     font-family: $ff-accent-num;
     text-transform: uppercase;
 }
 .v-carousel {
     box-shadow: none;
+}
+
+@media screen and (max-width: 665px) {
+    .wrapper-carousel {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 430px) {
+    .wrapper-carousel {
+        display: none;
+    }
 }
 </style>

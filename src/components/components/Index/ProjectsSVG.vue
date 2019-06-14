@@ -37,29 +37,40 @@ export default {
 @import '@/styles/_index.scss';
 
 .project {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    margin: 0px 50px;
-    padding: 20px 10px;
     display: flex;
     align-items: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0px 50px;
+    padding: 20px 10px;
     .header {
-        font-family: $ff-accent-num;
-        font-size: $fz-medium;
         position: absolute;
         top: -15px;
         left: 7px;
         padding: 0px 10px;
+        font-family: $ff-accent-num;
+        font-size: $fz-medium;
     }
 }
 .svg-project {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     stroke: $c-accent;
     stroke-width: 4;
-    position: absolute;
-    top: 0;
-    left: 0;
+}
+
+@media screen and (max-width: 470px) {
+    .project {
+        margin: 0px 40px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .project {
+        margin: 0px 20px;
+    }
 }
 </style>

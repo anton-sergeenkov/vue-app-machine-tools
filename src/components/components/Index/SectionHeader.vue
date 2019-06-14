@@ -37,22 +37,22 @@ export default {
 @import '@/styles/_index.scss';
 
 .section-header {
+    @include img-cover-top;
     padding: $m-basic;
     background-image: url(../../../assets/index/bg-section-1.png);
-    @include img-cover-top;
     a {
         text-decoration: none; 
     }
 }
 .header {
     h1 {
-        text-align: center;
         margin: $m-large;
+        text-align: center;
     }
     .text {
-        text-align: center;
         font-size: $fz-normal;
         font-family: $ff-header;
+        text-align: center;
         text-transform: uppercase;
         text-shadow: $text-shadow;
     }
@@ -68,7 +68,26 @@ export default {
         text-align: center;
     }
     .component-ui-button {
-        margin: 10px auto;
+        margin: $m-small auto;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .header h1 {
+        margin-left: $m-small;
+        margin-right: $m-small;
+    }
+}
+@media screen and (max-width: 430px) {
+    .header .text {
+        margin-bottom: $m-large;
+    }
+}
+@media screen and (max-width: 350px) {
+    .header h1 {
+        font-size: $fz-medium;
+        margin-left: $m-smaller;
+        margin-right: $m-smaller;
     }
 }
 </style>

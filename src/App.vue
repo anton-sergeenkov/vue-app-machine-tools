@@ -71,4 +71,3 @@ h3 {
     color: $c-unaccented;
 }
 </style>
-
