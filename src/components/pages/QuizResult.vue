@@ -59,12 +59,12 @@ export default {
                 (this.inputContact.email.length !== 0) &&
                 (this.inputContact.agreement !== false)
             ) {
-                let splitter = '------------------------------------\n\r';
+                let splitter = '------------------------------------\n';
                 let result =  
                     this.storeQuiz + splitter + 
-                    'Подарок: ' + this.storeGift.name + '\n\r'+splitter + 
-                    'Имя: '     + this.inputContact.name + '\n\r' +  
-                    'Телефон: ' + this.inputContact.phone + '\n\r' +  
+                    'Подарок: ' + this.storeGift.name + '\n'+splitter + 
+                    'Имя: '     + this.inputContact.name + '\n' +  
+                    'Телефон: ' + this.inputContact.phone + '\n' +  
                     'E-mail: '  + this.inputContact.email;
                 this.sendQuiz(result);
             } else {

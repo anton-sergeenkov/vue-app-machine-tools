@@ -63,16 +63,16 @@ export default {
                 let result = '';
                 
                 this.storeResult.forEach(function(element, counter) {
-                    result += `Вопрос №${counter+1}: ${element.quiz} \n\r`;
+                    result += `Вопрос №${counter+1}: ${element.quiz} \n`;
                     
                     if (element.radio.length !== 0) {
-                        result += 'Выбранный вариант: '+element.radio+'\n\r';
+                        result += 'Выбранный вариант: '+element.radio+'\n';
                     }
                     if (element.checkbox.length !== 0) {
-                        result += 'Несколько выбранных вариантов: '+element.checkbox+'\n\r';
+                        result += 'Несколько выбранных вариантов: '+element.checkbox+'\n';
                     }
                     if (element.text.length !== 0) {
-                        result += 'Комментарий: '+element.text+'\n\r';
+                        result += 'Комментарий: '+element.text+'\n';
                     }
                 });
 
