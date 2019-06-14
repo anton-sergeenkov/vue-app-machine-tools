@@ -46,4 +46,21 @@ p {
         color: $c-accent;
     }
 }
+
+@media screen and (max-width: 780px) {
+    .name {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .logo, .phone {
+        margin: 0;
+    }
+    .phone p {
+        display: none;
+    }
+}
 </style>
