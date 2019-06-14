@@ -67,6 +67,7 @@ export default {
                     'Телефон: ' + this.inputContact.phone + '\n' +  
                     'E-mail: '  + this.inputContact.email;
                 this.sendQuiz(result);
+                this.$router.push({ name: 'index' });
             } else {
                 alert('Заполните все поля!');
             }
@@ -75,6 +76,7 @@ export default {
             axios.post('./server/send-email.php', { quiz: data })
             .then(function(response) {
                 alert('Спасибо за заявку!');
+                this.$router.push({ name: 'index' });
             })
             .catch(function(error) {
                 console.log(error);

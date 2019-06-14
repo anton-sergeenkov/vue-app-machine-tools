@@ -77,7 +77,7 @@ export default {
                 });
 
                 this.$store.commit('SET_QUIZ', {quiz:result});
-                this.$router.push({ name: 'quiz-result' })
+                this.$router.push({ name: 'quiz-result' });
             } else {
                 alert('Выберите вариант или заполните поле');
             }
