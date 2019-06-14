@@ -128,6 +128,7 @@ export default {
     margin-right: 30px;
     box-shadow: $box-shadow;
     max-width: 800px;
+    background: #fff;
     .header {
         padding: 20px;
         background: rgb(228, 228, 228);
