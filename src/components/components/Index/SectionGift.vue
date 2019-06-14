@@ -72,15 +72,15 @@ export default {
     padding: $m-basic;
 }
 .header {
-    text-align: center;
     margin-top: $m-large;
+    text-align: center;
     span {
         color: $c-accent;
     }
 }
 .comment {
-    text-align: center;
     margin-top: $m-small;
+    text-align: center;
 }
 .gifts {
     display: flex;
@@ -93,8 +93,8 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     width: 290px;
-    padding: 20px;
     margin: 20px 10px;
+    padding: 20px;
     box-shadow: $box-shadow-color;
     cursor: pointer;
     transition: 0.4s;
@@ -112,10 +112,10 @@ export default {
         margin: $m-basic 0px;
     }
     img {
+        display: block;
         flex-shrink: 0;
         width: 100%;
         height: 200px;
-        display: block;
         object-fit: cover;
         object-position: 50% 50%;
     }
@@ -140,8 +140,8 @@ export default {
         color: $c-accent;
     }
     .component-ui-button {
-        line-height: 1.7;
         margin: $m-basic auto 0px auto;
+        line-height: 1.7;
     }
     .footer-comment {
         margin-top: $m-large * 1.5;
@@ -152,8 +152,8 @@ export default {
     }
     hr {
         max-width: 200px;
-        margin: $m-normal auto;
         height: 1px;
+        margin: $m-normal auto;
         border: none;
         background-color: $c-unaccented;
     }
