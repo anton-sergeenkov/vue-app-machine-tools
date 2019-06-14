@@ -2,7 +2,11 @@
     <div class="wrapper">
         
         <div class="wrapper-step">
-            Шаг {{currentNum+1}}
+            <div class="step-name">Шаг {{currentNum+1}}</div>
+            <div v-for="(item, i) in catalogQuiz" :key="item.name" class="step-wrapper">
+                <div class="step-circle"></div>
+                <div class="step-line" v-if="i!==catalogQuiz.length-1"></div>
+            </div>
         </div>
 
         <div class="wrapper-content">
@@ -131,9 +135,36 @@ export default {
     display: flex;
     justify-content: center;
 }
+
+$step-size: 20px;
+$step-color: $c-lighten;
 .wrapper-step {
-    font-weight: bold;
+    display: flex;
     padding: 20px;
+    .step-name {
+        flex-shrink: 0;
+        font-weight: bold;
+        margin-right: $m-normal;
+        color: $c-unaccented;
+    }
+    .step-wrapper {
+        display: flex;
+        align-items: center;
+        .step-circle {
+            flex-shrink: 0;
+            width: $step-size;
+            height: $step-size;
+            border: 2px solid $step-color;
+            border-radius: 50%;
+        }
+        .step-line {
+            flex-shrink: 0;
+            width: $step-size / 1.2;
+            height: 2px;
+            background-color: $step-color;
+        }
+    }
+
 }
 .wrapper-quiz {
     display: flex;
