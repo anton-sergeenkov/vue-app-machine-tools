@@ -22,11 +22,34 @@
 	background-position: top center;
 	background-size: contain;
 }
+@mixin img-clear {
+	display: block;
+	object-fit: cover;
+	object-position: 50% 50%;
+	margin: 0;
+	padding: 0;
+}
 
+//------------------------------------------------------------------------------
+// FLEX
+//------------------------------------------------------------------------------
+@mixin flex-column($count, $margin) {
+    width: calc(100% / #{$count} - #{$margin*2});
+}
 @mixin flex-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+//------------------------------------------------------------------------------
+// OTHER
+//------------------------------------------------------------------------------
+@mixin btn-clear {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
 }
 @mixin full-screen {
 	width: 100%;
@@ -36,11 +59,3 @@
 	width: 100%;
 	height: 100%;
 }
-@mixin btn-clear {
-	cursor: pointer;
-	border: none;
-	outline: none;
-	background: none;
-}
-
-

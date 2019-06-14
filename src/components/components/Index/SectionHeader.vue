@@ -60,7 +60,7 @@ export default {
 .projects {
     display: flex;
     justify-content: center;
-    margin: 40px 0px;
+    margin: 40px auto;
 }
 .quiz {
     .comment {

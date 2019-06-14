@@ -85,14 +85,14 @@ export default {
 .gifts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: $m-basic;
+    max-width: 1100px;
+    margin: $m-basic auto;
 }
 .gift {
+    @include flex-column(4, 10px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 290px;
     margin: 20px 10px;
     padding: 20px;
     box-shadow: $box-shadow-color;
@@ -109,7 +109,7 @@ export default {
         text-align: center;
     }
     .gift-description {
-        margin: $m-basic 0px;
+        margin: $m-normal 0px;
     }
     img {
         display: block;
@@ -120,7 +120,7 @@ export default {
         object-position: 50% 50%;
     }
     .component-ui-button {
-        margin-top: $m-basic;
+        margin-top: $m-normal;
     }
 }
 .gift-check {
@@ -156,6 +156,22 @@ export default {
         margin: $m-normal auto;
         border: none;
         background-color: $c-unaccented;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .gift {
+        @include flex-column(3, 10px);
+    }
+}
+@media screen and (max-width: 935px) {
+    .gift {
+        @include flex-column(2, 10px);
+    }
+}
+@media screen and (max-width: 640px) {
+    .gift {
+        @include flex-column(1, 10px);
     }
 }
 </style>

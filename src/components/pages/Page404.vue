@@ -8,5 +8,6 @@
 @import '@/styles/_index.scss';
 .wrapper {
     padding: $m-biggest;
+    background-color: $c-light;
 }
 </style>
