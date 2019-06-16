@@ -17,7 +17,7 @@
 
                     <div class="data">
                         <div v-for="item in catalogQuiz[currentNum].data" :key="item.name">
-                            <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="String(currentNum)"  />
+                            <ui-input-radio    v-if="item.type=='radio'"    v-model="stateRadio"    :label="item.name" color="red" :val="item.name" :group="String(currentNum)" />
                             <ui-input-checkbox v-if="item.type=='checkbox'" v-model="stateCheckbox" :label="item.name" color="red" :val="item.name" />
                             <ui-input-text     v-if="item.type=='text'"     v-model="stateText"     :label="item.name" color="red" />
                         </div>
