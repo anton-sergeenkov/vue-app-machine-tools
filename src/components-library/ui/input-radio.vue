@@ -1,7 +1,7 @@
 <template>
     <label :class="classes" class="component-ui-input-radio">
         <input 
-            @input="$emit('input', $event.target.value)"
+            @change="$emit('input', $event.target.value)"
             :value="val"
             :name="'radio'+group" 
             type="radio"
