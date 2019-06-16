@@ -1,24 +1,46 @@
 <template>
     <div id="app">
-        <app-header></app-header>
+        <app-header />
         <router-view></router-view>
+        <app-modal-dialog />
         <app-metrics />
     </div>
 </template>
 
 <script>
-import Index      from './components/pages/Index.vue';
-import Quiz       from './components/pages/Quiz.vue';
-import QuizResult from './components/pages/QuizResult.vue';
+import Index       from './components/pages/Index.vue';
+import Quiz        from './components/pages/Quiz.vue';
+import QuizResult  from './components/pages/QuizResult.vue';
 
-import Header     from './components/components/Header.vue';
-import ApiMetrics from './components/components/ApiMetrics.vue';
-import Page404    from './components/pages/Page404.vue';
+import Header      from './components/components/Header.vue';
+import ApiMetrics  from './components/components/ApiMetrics.vue';
+import ModalDialog from './components/components/ModalDialog.vue';
+import Page404     from './components/pages/Page404.vue';
 
 export default {
+    data() {
+        return {
+            showModal: false
+        }
+    },
     components: {
         'app-header': Header,
-        'app-metrics': ApiMetrics
+        'app-metrics': ApiMetrics,
+        'app-modal-dialog': ModalDialog
+    },
+    methods: {
+        closeModal() {
+            this.showModal = false;
+        }
+    },
+    mounted() {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('mousemove', function(e) {
+                if (e.screenY < 140) {
+                    console.log(e.screenY);
+                }
+            });
+        }
     }
 }
 
