@@ -1,12 +1,12 @@
 <template>
-    <label class="component-ui-input-checkbox">
+    <label :class="classes" class="component-ui-input-checkbox">
         <input 
-            v-model="checked" 
             @change="onChange"
             :value="val" 
+            v-model="checked" 
             type="checkbox" 
         />
-        <div :class="classes" class="icon"></div>
+        <div class="icon"></div>
         <span v-html="label"></span>
     </label>
 </template>
@@ -51,10 +51,26 @@ export default {
 @import './styles.scss';
 
 $size: 20px;
+$border-radius: 3px;
 
 @mixin setColor($color) {
-    border: 2px solid $color;
-    background: $color;
+    input[type="checkbox"] {
+        &:checked + .icon:after {
+            background-color: $color;
+        }
+        &:checked + .icon {
+            border: 2px solid $color;
+        }
+    }
+}
+.component-ui-input-checkbox.v-custom-- {
+    &indigo     { @include setColor($indigo);     }
+    &blue       { @include setColor($blue);       }
+    &blue-light { @include setColor($blue-light); }
+    &green      { @include setColor($green);      }
+    &red        { @include setColor($red);        }
+    &orange     { @include setColor($orange);     }
+    &silver     { @include setColor($silver);     }
 }
 
 .component-ui-input-checkbox {
@@ -66,23 +82,11 @@ $size: 20px;
 input[type="checkbox"] {
     display: none;
     &:checked + .icon:after {
-        content: '✔';
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        content: '';
+        display: block;
         width: $size / 2;
         height: $size / 2;
-        color: #fff;
-        font-size: 11px;
-    }
-    &:checked + .icon.v-custom-- {
-        &indigo     { @include setColor($indigo);     }
-        &blue       { @include setColor($blue);       }
-        &blue-light { @include setColor($blue-light); }
-        &green      { @include setColor($green);      }
-        &red        { @include setColor($red);        }
-        &orange     { @include setColor($orange);     }
-        &silver     { @include setColor($silver);     }
+        border-radius: $border-radius;
     }
 }
 .icon {
@@ -94,6 +98,6 @@ input[type="checkbox"] {
     height: $size;
     margin: 10px;
     border: 2px solid $gray;
-    border-radius: 3px;
+    border-radius: $border-radius;
 }
 </style>

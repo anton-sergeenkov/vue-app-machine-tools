@@ -7,7 +7,7 @@
             type="radio"
         />
         <div class="icon"></div>
-        {{label}}
+        <span v-html="label"></span>
     </label>
 </template>
 
@@ -33,11 +33,12 @@ export default {
 @import './styles.scss';
 
 $size: 20px;
+$border-radius: 50%;
 
 @mixin setColor($color) {
     input[type="radio"] {
         &:checked + .icon:after {
-            background: $color;
+            background-color: $color;
         }
         &:checked + .icon {
             border: 2px solid $color;
@@ -67,7 +68,7 @@ input[type="radio"] {
         display: block;
         width: $size / 2;
         height: $size / 2;
-        border-radius: 50%;
+        border-radius: $border-radius;
     }
 }
 .icon {
@@ -79,6 +80,6 @@ input[type="radio"] {
     height: $size;
     margin: 10px;
     border: 2px solid $gray;
-    border-radius: 50%;
+    border-radius: $border-radius;
 }
 </style>
