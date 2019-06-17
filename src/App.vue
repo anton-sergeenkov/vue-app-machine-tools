@@ -18,29 +18,10 @@ import ModalDialog from './components/components/ModalDialog.vue';
 import Page404     from './components/pages/Page404.vue';
 
 export default {
-    data() {
-        return {
-            showModal: false
-        }
-    },
     components: {
         'app-header': Header,
         'app-metrics': ApiMetrics,
         'app-modal-dialog': ModalDialog
-    },
-    methods: {
-        closeModal() {
-            this.showModal = false;
-        }
-    },
-    mounted() {
-        if (typeof window !== 'undefined') {
-            window.addEventListener('mousemove', function(e) {
-                if (e.screenY < 140) {
-                    console.log(e.screenY);
-                }
-            });
-        }
     }
 }
 
