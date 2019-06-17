@@ -9,7 +9,7 @@
                         Стойте! Сэкономьте время и деньги.
                         Укажите свой телефон и вам перезвонит наш специалист.
                     </p>
-                    <ui-input-text label="Телефон" color="red" />
+                    <ui-input-text label="Телефон*" color="red" v-model="inputPhone" />
                     <ui-button label="Заказать звонок" color="red" />
                 </div>
             </form>
@@ -18,11 +18,14 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
             openModal: false,
-            wasOpened: false
+            wasOpened: false,
+            inputPhone: ''
         }
     },
     methods: {
@@ -30,8 +33,22 @@ export default {
             this.openModal = false;
         },
         checkForm() {
-            alert('ok');
-            this.closeModal();
+            if (this.inputPhone.length !== 0) {
+                alert('Спасибо за заявку');
+                this.closeModal();
+                this.sendForm('Посетитель оставил телефон для перезвона: '+this.inputPhone);
+            } else {
+                alert('Укажите номер телефона');
+            }
+        },
+        sendForm(data) {
+            axios.post('./server/send-email.php', { quiz: data })
+            .then(function(response) {
+                console.log(response.data);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
         },
         handleModalForm(e) {
             if ( (e.screenY < 130) && (!this.wasOpened) ) {
@@ -71,6 +88,17 @@ export default {
             margin-top: 20px;
             margin-bottom: 30px;
         }
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .wrapper-form img {
+        display: none;
+    }
+}
+@media screen and (max-width: 430px) {
+    .wrapper-form .data {
+        width: 90%;
     }
 }
 </style>
