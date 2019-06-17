@@ -12,7 +12,7 @@
             </ul>
 
             <ui-input-text v-model="inputContact.name" label="Как к вам обращаться?*" color="red" />
-            <ui-input-text v-model="inputContact.phone" label="Телефон для консультации*" color="red" />
+            <ui-input-text v-model="inputContact.phone" type="number" label="Телефон для консультации*" color="red" />
             <ui-input-text v-model="inputContact.email" label="Электронный ящик для ТКП*" color="red" />
 
             <label>

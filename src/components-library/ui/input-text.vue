@@ -6,7 +6,7 @@
             @blur="onBlur($event.target.value)" 
             :class="classes" 
             class="input"
-            type="text"
+            :type="type"
         >
         <label :class="{ active:focused }" v-html="label"></label>
     </div>
@@ -21,7 +21,8 @@ export default {
     },
     props: {
         color: { type: String, default: 'silver' },
-        label: { type: String }
+        label: { type: String },
+        type:  { type: String, default: 'text' }
     },
     methods: {
         onFocus() {
@@ -101,5 +102,11 @@ label {
         top: -25px;
         font-size: 14px;
     }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 </style>

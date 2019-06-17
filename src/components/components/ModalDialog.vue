@@ -8,7 +8,7 @@
                         Стойте! Сэкономьте время и деньги.
                         Укажите свой телефон и вам перезвонит наш специалист.
                     </p>
-                    <ui-input-text label="Телефон*" color="red" v-model="inputPhone" />
+                    <ui-input-text label="Телефон*" type="number" color="red" v-model="inputPhone" />
                     <ui-button label="Заказать звонок" color="red" />
                 </div>
             </form>
