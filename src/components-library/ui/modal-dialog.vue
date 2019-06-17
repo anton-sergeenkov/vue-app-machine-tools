@@ -53,6 +53,8 @@ $fz-header: 20px;
 
 .component-ui-modal-dialog {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -62,9 +64,7 @@ $fz-header: 20px;
     background-color: $color-wrapper;
 }
 .modal-dialog {
-    // width: 400px;
     position: relative;
-    margin: auto;
     border-radius: 2px;
     background-color: $color-form;
     box-shadow: 0px 5px 5px 0px $color-wrapper;
