@@ -3,9 +3,9 @@
         <div class="component-ui-modal-dialog" @click="checkClose" ref="wrapper">
 
             <div class="modal-dialog">
-                <div class="header">
+                <!-- <div class="header">
                     <slot name="header">Default Header</slot>
-                </div>
+                </div> -->
                 <div class="form">
                     <slot name="form">Default Form</slot>
                 </div>
@@ -62,7 +62,7 @@ $fz-header: 20px;
     background-color: $color-wrapper;
 }
 .modal-dialog {
-    width: 400px;
+    // width: 400px;
     position: relative;
     margin: auto;
     border-radius: 2px;
