@@ -1,16 +1,11 @@
 <template>
     <transition name="fade">
         <div class="component-ui-modal-dialog" @click="checkClose" ref="wrapper">
-
             <div class="modal-dialog">
-                <!-- <div class="header">
-                    <slot name="header">Default Header</slot>
-                </div> -->
                 <div class="form">
                     <slot name="form">Default Form</slot>
                 </div>
             </div>
-
         </div>
     </transition>
 </template>

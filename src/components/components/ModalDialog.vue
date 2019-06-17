@@ -1,6 +1,5 @@
 <template>
     <ui-modal-dialog v-if="openModal" @close="closeModal">
-        <!-- <template v-slot:header>Message</template> -->
         <template v-slot:form>
             <form @submit.prevent="checkForm" class="wrapper-form">
                 <img src="@/assets/img/stop.jpg">
@@ -50,8 +49,8 @@ export default {
                 console.log(error);
             });
         },
-        handleModalForm(e) {
-            if ( (e.screenY < 130) && (!this.wasOpened) ) {
+        handleModalForm() {
+            if (!this.wasOpened) {
                 this.openModal = true;
                 this.wasOpened = true;
             }
@@ -59,7 +58,7 @@ export default {
     },
     mounted() {
         if (typeof window !== 'undefined') {
-            document.body.addEventListener('mousemove', this.handleModalForm);
+            document.addEventListener('mouseleave', this.handleModalForm);
         }
     }
 }
