@@ -58,7 +58,7 @@ export default {
     },
     mounted() {
         if (typeof window !== 'undefined') {
-            document.addEventListener('mouseleave', this.handleModalForm);
+            document.documentElement.addEventListener('mouseleave', this.handleModalForm);
         }
     }
 }
